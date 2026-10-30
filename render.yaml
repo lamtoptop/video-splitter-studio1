@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: video-splitter-studio
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: MAX_FILES_PER_JOB
+        value: "100"
+      - key: MAX_UPLOAD_BYTES
+        value: "8589934592"
+      - key: JOB_TTL_SECONDS
+        value: "7200"
